@@ -3,9 +3,9 @@
 
 #define MyAppName "QMK Toolbox"
 #define MyAppHandle "qmk"
-#define MyAppVersion "0.0.11"
+#define MyAppVersion "0.3.3"
 #define MyAppPublisher "QMK"
-#define MyAppURL "http://qmk.fm"
+#define MyAppURL "https://qmk.fm"
 #define MyAppExeName "qmk_toolbox.exe"
 
 [Setup]
@@ -15,28 +15,30 @@
 AppId={{777330BE-14A3-42E5-BB86-8F9D30744097}
 AppName={#MyAppName}
 AppVersion={#MyAppVersion}
-;AppVerName={#MyAppName} {#MyAppVersion}
+AppVerName={#MyAppName} {#MyAppVersion}
 AppPublisher={#MyAppPublisher}
 AppPublisherURL={#MyAppURL}
 AppSupportURL={#MyAppURL}
 AppUpdatesURL={#MyAppURL}
-DefaultDirName={pf}\{#MyAppName}
+DefaultDirName={commonpf}\{#MyAppName}
 DisableProgramGroupPage=yes
 OutputDir=.
-OutputBaseFilename=install
-SetupIconFile=QMK Toolbox\output.ico
+OutputBaseFilename=qmk_toolbox_install
+SetupIconFile=QMK Toolbox\Resources\output.ico
 Compression=lzma
 SolidCompression=yes
 ChangesAssociations=yes
+UninstallDisplayIcon={app}\{#MyAppExeName}
+ArchitecturesInstallIn64BitMode=x64
 
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"
 
 [Tasks]
-Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
+Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"
 
 [Files]
-Source: "QMK Toolbox\bin\Release\qmk_toolbox.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "QMK Toolbox\bin\Release\win-x64\publish\qmk_toolbox.exe"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
@@ -47,15 +49,8 @@ Name: "{commondesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: 
 Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: nowait postinstall skipifsilent
 
 [Registry]
-Root: HKCR; Subkey: ".qmk";                             ValueData: "{#MyAppName}";          Flags: uninsdeletevalue; ValueType: string;  ValueName: ""
-Root: HKCR; Subkey: "{#MyAppName}";                     ValueData: "Program {#MyAppName}";  Flags: uninsdeletekey;   ValueType: string;  ValueName: ""
-Root: HKCR; Subkey: "{#MyAppName}\DefaultIcon";         ValueData: "{app}\{#MyAppExeName},0";               ValueType: string;  ValueName: ""
-Root: HKCR; Subkey: "{#MyAppName}\shell\open\command";  ValueData: """{app}\{#MyAppExeName}"" ""%1""";  ValueType: string;  ValueName: ""
-
-Root: HKCR; Subkey: "{#MyAppHandle}"; Flags: uninsdeletekey
-Root: HKCR; Subkey: "{#MyAppHandle}"; ValueType: string; ValueName: ""; ValueData: "URL:My custom protocol handler 01"; Flags: uninsdeletekey
-Root: HKCR; Subkey: "{#MyAppHandle}"; ValueType: string; ValueName: "URL Protocol"; ValueData: ""; Flags: uninsdeletekey
-Root: HKCR; Subkey: "{#MyAppHandle}\DefaultIcon"; Flags: uninsdeletekey
-Root: HKCR; Subkey: "{#MyAppHandle}\DefaultIcon"; ValueType: string; ValueName: ""; ValueData: "{#MyAppExeName},1"; Flags: uninsdeletekey
-Root: HKCR; Subkey: "{#MyAppHandle}\Shell\open\command"; Flags: uninsdeletekey
-Root: HKCR; Subkey: "{#MyAppHandle}\Shell\open\command"; ValueType: string; ValueName: ""; ValueData: """{app}\{#MyAppExeName}"" ""%1"""; Flags: uninsdeletekey
+; qmk:// protocol handler
+Root: HKCR; Subkey: "{#MyAppHandle}";                    ValueData: "URL:{#MyAppName}";                 ValueType: string; ValueName: "";             Flags: uninsdeletevalue
+Root: HKCR; Subkey: "{#MyAppHandle}";                    ValueData: "";                                 ValueType: string; ValueName: "URL Protocol"; Flags: uninsdeletekey
+Root: HKCR; Subkey: "{#MyAppHandle}\DefaultIcon";        ValueData: "{app}\{#MyAppExeName}";            ValueType: string; ValueName: "";
+Root: HKCR; Subkey: "{#MyAppHandle}\shell\open\command"; ValueData: """{app}\{#MyAppExeName}"" ""%1"""; ValueType: string; ValueName: "";

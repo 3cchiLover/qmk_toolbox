@@ -12,7 +12,7 @@ namespace QMK_Toolbox.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.5.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.7.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -37,7 +37,7 @@ namespace QMK_Toolbox.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("atmega32u4")]
         public string targetSetting {
             get {
                 return ((string)(this["targetSetting"]));
@@ -56,144 +56,6 @@ namespace QMK_Toolbox.Properties {
             }
             set {
                 this["autoSetting"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool flashEnabled {
-            get {
-                return ((bool)(this["flashEnabled"]));
-            }
-            set {
-                this["flashEnabled"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool resetEnabled {
-            get {
-                return ((bool)(this["resetEnabled"]));
-            }
-            set {
-                this["resetEnabled"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("FEED")]
-        public string vendorSetting {
-            get {
-                return ((string)(this["vendorSetting"]));
-            }
-            set {
-                this["vendorSetting"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string deviceSetting {
-            get {
-                return ((string)(this["deviceSetting"]));
-            }
-            set {
-                this["deviceSetting"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool availableDeviceSetting {
-            get {
-                return ((bool)(this["availableDeviceSetting"]));
-            }
-            set {
-                this["availableDeviceSetting"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool staticDeviceSetting {
-            get {
-                return ((bool)(this["staticDeviceSetting"]));
-            }
-            set {
-                this["staticDeviceSetting"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool productEnabledSetting {
-            get {
-                return ((bool)(this["productEnabledSetting"]));
-            }
-            set {
-                this["productEnabledSetting"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool vendorEnabledSetting {
-            get {
-                return ((bool)(this["vendorEnabledSetting"]));
-            }
-            set {
-                this["vendorEnabledSetting"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool deviceEnabledSetting {
-            get {
-                return ((bool)(this["deviceEnabledSetting"]));
-            }
-            set {
-                this["deviceEnabledSetting"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("6060")]
-        public string productSetting {
-            get {
-                return ((string)(this["productSetting"]));
-            }
-            set {
-                this["productSetting"] = value;
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool availableDevicesSetting {
-            get {
-                return ((bool)(this["availableDevicesSetting"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool staticDevicesSetting {
-            get {
-                return ((bool)(this["staticDevicesSetting"]));
             }
         }
         
@@ -265,6 +127,18 @@ namespace QMK_Toolbox.Properties {
             }
             set {
                 this["driversInstalled"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool showAllDevices {
+            get {
+                return ((bool)(this["showAllDevices"]));
+            }
+            set {
+                this["showAllDevices"] = value;
             }
         }
     }
